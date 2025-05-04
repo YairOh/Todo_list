@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        IMAGE_NAME = 'yp3yp3/to_do_list'
+        IMAGE_NAME = 'yairoh/todo_list'
         VERSION = "${BUILD_NUMBER}"
-        email = 'yp3yp3@gmail.com'
+        email = 'yairohana.23@gmail.com'
         REMOTE_USER = 'ubuntu'
         REMOTE_HOST_STAGE = '172.31.40.99'
         REMOTE_HOST_PRODUCTION = '172.31.40.242'
@@ -76,7 +76,7 @@ pipeline {
                     script {
                         def prTitle = "Merge ${BRANCH_NAME} into main @${VERSION}"
                         def prBody = "This PR merges changes from ${BRANCH_NAME} into main. http://stage.yp3yp3.online/"
-                        def prUrl = "https://api.github.com/repos/yp3yp3/Todo_list/pulls"
+                        def prUrl = "https://api.github.com/repos/YairOh/Todo_List/pulls"
                         sh """
                             curl -X POST \
                             -H "Authorization: token ${GH_TOKEN}" \
